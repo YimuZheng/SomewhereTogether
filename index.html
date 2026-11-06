@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Somewhere Together</title>
+
+  <script src="https://p5livemedia.itp.io/simplepeer.min.js"></script>
+  <script src="https://p5livemedia.itp.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <script src="https://p5livemedia.itp.io/p5livemedia.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-scene="beach">
+  <main class="app">
+    <div class="room-controls">
+      <input id="roomName" type="text" maxlength="40" placeholder="Room name" aria-label="Room name" autocomplete="off">
+      <button id="connect" type="button">Join</button>
+    </div>
+    <p id="statusText" class="sr-only" role="status" aria-live="polite"></p>
+
+    <section class="call-area" aria-label="Video conversation">
+      <div class="video-frame">
+        <div id="videoStuff"></div>
+        <div class="center-divider" aria-hidden="true"></div>
+      </div>
+      <div class="call-controls">
+        <button id="ambientToggle" type="button">Play sound</button>
+      </div>
+    </section>
+
+    <div class="scene-options" role="group" aria-label="Choose a shared scene">
+      <button type="button" class="scene-button is-active" data-scene="beach" aria-pressed="true">Beach</button>
+      <button type="button" class="scene-button" data-scene="park" aria-pressed="false">Park</button>
+      <button type="button" class="scene-button" data-scene="mountain" aria-pressed="false">Mountain</button>
+    </div>
+  </main>
+
+  <audio id="ambientAudio" loop preload="none"></audio>
+  <script src="sketch.js"></script>
+</body>
+</html>
